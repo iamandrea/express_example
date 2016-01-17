@@ -1,6 +1,308 @@
-body
-  padding: 50px
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif
+@import "bourbon/bourbon"
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500,700,900)
 
-a
-  color: #00B7FF
+body
+  position: absolute
+  top: 0
+  left: 0
+  padding: 0 
+  margin: 0
+  width: 100% 
+  height: 100% 
+  font: 16px "Roboto", sans-serif
+  background-color: #000
+
+header
+  position: absolute
+  width: 100%
+  height: 125px
+  background-color: #a2cef4
+  top: 0
+  left: 0
+  text-align: center
+  p
+  	position: relative
+  	color: #034b88
+  	padding: 0
+  	font-weight: 300
+  .logo-text-jd
+    margin-top: -37px
+    @include animation-name(fadein)
+    @include animation-duration(8s)
+    @include animation-timing-function(ease-in-out)
+    @include animation-iteration-count(infinite)
+    opacity: 0
+  .logo-text-name
+    margin-top: -10px
+    @include animation-name(fadeout)
+    @include animation-duration(8s)
+    @include animation-timing-function(ease-in-out)
+    @include animation-iteration-count(infinite)
+    opacity: 1
+
+@include keyframes(fadein)
+  0%
+    opacity: 0
+  50%
+    opacity: 0
+  60%
+    opacity: 1
+  80%
+    opacity: 1
+  90% 
+    opacity: 0
+  100% 
+  	opacity: 0
+
+@include keyframes(fadeout)
+  0%
+    opacity: 1
+  40%
+    opacity: 1
+  50%
+    opacity: 0
+  90%
+    opacity: 0
+  100% 
+    opacity: 1
+
+.logo
+	padding: 15px 0 15px 0
+	width: 109px
+
+.nav
+  position: absolute
+  width: 41.5px
+  height: 31px
+  top: 10px 
+  right: 10px
+  background-size: 100% auto
+  outline: 0px solid transparent
+  display: block
+  @include transition(all 0.1s ease-in-out)
+  z-index: 2
+  &.inactive
+    background-image: url("../images/hamburgerDark@2x.png")
+  &.active
+    background-image: url("../images/hamburgerLight@2x.png")
+
+.navBackground
+  position: absolute
+  width: 250px 
+  height: 210px 
+  background-color: #031422      
+  top: 0
+  right: 0
+  z-index: 1
+  display: block 
+  @include transition(all 0.1s ease-in-out)
+  opacity: 0
+  ul 
+    list-style: none
+    color: lightblue
+    text-transform: uppercase
+    font-weight: 300
+    font-size: 16px
+    padding-left: 1px
+    margin-top: 50px
+    text-align: center
+    line-height: 28px
+  li
+  	&.selected
+  	  font-weight: 600
+
+.container
+	position: absolute 
+	min-width: 100%
+	height: 100%
+	left: 0
+	margin: 0
+	top: 0px
+	overflow: hidden
+
+.iphone
+    position: absolute
+    width: 250px
+    height: 474px
+    left: 50% !important
+    margin-left: -125px
+    top: 175px !important
+
+.slide-1
+	position: absolute
+	width: 100% 
+	height: 100% 
+	top: 0 
+	left: 0
+	@include transition(all 0.5s ease-in-out) 
+	&.center
+		@include transform(translateX(0%))   
+	&.left
+		@include transform(translateX(-100%))
+	&.right
+		@include transform(translateX(100%))
+
+.slide-2
+	@extend .slide-1
+	&.center
+		@include transform(translateX(0%))   
+	&.left
+		@include transform(translateX(-100%))
+	&.right
+		@include transform(translateX(100%))
+
+.slide-1-bg-container
+    position: absolute
+    width: 197px
+    height: 352px
+    left: 50%
+    margin-left: -100.5px
+    top: 235px
+    overflow: hidden
+
+.slide-1-bg
+    position: relative
+    width: 510px 
+    height: 425px
+    background-image: url("../images/beroccaBackground@2x.png")
+    background-size: 100% auto 
+    background-position: center center
+    left: 50% !important
+    margin-left: -225px
+
+.slide-1-ninja 
+    position: absolute
+    width: 190px 
+    height: 156px 
+    left: 50% !important
+    margin-left: -95px 
+    top: 55% !important
+    margin-top: -78px 
+    @media screen and (max-height: 700px)
+      top: 65% !important	
+    @media screen and (max-height: 490px)
+      top: 75% !important	
+    @media screen and (max-height: 350px)
+      opacity: 0
+      @include transition(all 0.5s ease-in-out)      
+
+
+.title
+    font-weight: 300
+    color: #a2cef4
+    background-color: #031422
+    padding: 15px 30px 15px 20px
+    position: absolute
+    top: 109px
+    left: 0px
+    z-index: 10
+
+.button
+    font-weight: 300
+    color: #a2cef4
+    background-color: #031422
+    padding: 15px 50px 15px 20px
+    position: absolute
+    bottom: 0px
+    z-index: 10
+    margin-bottom: 0px
+    right: 0px
+    &::after
+        content: ""
+        position: absolute
+        width: 12px 
+        height: 20px 
+        background-image: url("../images/arrow@2x.png")
+        background-size: 100% auto 
+        @include transform(rotate(180deg))
+        right: 23px
+        top: 16px
+
+.left-arrow
+    position: absolute 
+    width: 53px
+    height: 93px 
+    top: 50% 
+    margin-top: -46.5px
+    left: 40px 
+    background-image: url("../images/arrow@2x.png")
+    background-size: 100% auto 
+    @media screen and (orientation: portrait)
+      left: 20px
+      width: 30px 
+      height: 52px 
+    @media screen and (max-height: 750px)
+      top: 60% 
+      margin-top: -26px 
+    @media screen and (orientation: landscape) and (max-height: 500px)
+      left: 20px
+      width: 30px 
+      height: 52px 
+      top: 65%
+
+.right-arrow
+    position: absolute 
+    width: 53px
+    height: 93px 
+    top: 50% 
+    margin-top: -46.5px
+    right: 40px 
+    background-image: url("../images/arrow@2x.png")
+    background-size: 100% auto 
+    @include transform(rotate(180deg))
+    @media screen and (orientation: portrait)
+      right: 20px
+      width: 30px 
+      height: 52px 
+    @media screen and (max-height: 750px)
+      top: 60% 
+      margin-top: -26px 
+    @media screen and (orientation: landscape) and (max-height: 500px)
+      right: 20px
+      width: 30px 
+      height: 52px 
+      top: 65%
+
+.pagination
+    text-align: center
+    position: absolute
+    bottom: 0
+    left: 0
+    right: 0
+    background-color: #000
+    padding-top: 10px
+    @media screen and (orientation: portrait)
+      padding-bottom: 50px
+
+
+.pagination a
+    display: inline-block
+    margin: 10px
+    width: 20px
+    height: 20px
+
+.pagination a:before
+    background-color: #aaa
+    content: ""
+    display: block
+    width: 10px
+    height: 10px
+    -webkit-border-radius: 100%
+    -moz-border-radius: 100%
+    -ms-border-radius: 100%
+    border-radius: 100%
+    @include transition(all 0.3s ease)
+
+.pagination a:hover:before
+    width: 15px
+    height: 15px
+    margin: -2px 0 0 -2px
+
+.pagination a.selected:before,
+.pagination a:hover:before 
+    background-color: #fff
+
+.pagination a.selected:hover:before, .pagination a.selected:before 
+    width: 20px
+    height: 20px
+    margin: -5px 0 0 -5px
