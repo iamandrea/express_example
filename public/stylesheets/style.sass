@@ -1,6 +1,11 @@
 @import "bourbon/bourbon"
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500,700,900)
 
+@mixin striped-bg($bg-color: #f2f2f2, $darken-amount: 5%, $stripe-color: #eee)
+  background-color: $bg-color
+  @include background-image(linear-gradient(-45deg, $stripe-color 25%, transparent 25%, transparent 50%, $stripe-color 50%, $stripe-color 75%, transparent 75%, transparent))
+  background-size: 40px 40px
+
 body
   position: absolute
   top: 0
@@ -10,19 +15,19 @@ body
   width: 100% 
   height: 100% 
   font: 16px "Roboto", sans-serif
-  background-color: #000
+  @include striped-bg
 
 header
   position: absolute
   width: 100%
   height: 125px
-  background-color: #a2cef4
+  background-color: #f6c2e8
   top: 0
   left: 0
   text-align: center
   p
   	position: relative
-  	color: #034b88
+  	color: #000
   	padding: 0
   	font-weight: 300
   .logo-text-jd
@@ -33,7 +38,7 @@ header
     @include animation-iteration-count(infinite)
     opacity: 0
   .logo-text-name
-    margin-top: -10px
+    margin-top: -8px
     @include animation-name(fadeout)
     @include animation-duration(8s)
     @include animation-timing-function(ease-in-out)
@@ -82,7 +87,7 @@ header
   @include transition(all 0.1s ease-in-out)
   z-index: 2
   &.inactive
-    background-image: url("../images/hamburgerDark@2x.png")
+    background-image: url("../images/hamburgerLight@2x.png")
   &.active
     background-image: url("../images/hamburgerLight@2x.png")
 
@@ -90,7 +95,7 @@ header
   position: absolute
   width: 250px 
   height: 210px 
-  background-color: #031422      
+  background-color: #a0bbff
   top: 0
   right: 0
   z-index: 1
@@ -99,7 +104,7 @@ header
   opacity: 0
   ul 
     list-style: none
-    color: lightblue
+    color: #000
     text-transform: uppercase
     font-weight: 300
     font-size: 16px
@@ -128,12 +133,22 @@ header
     margin-left: -125px
     top: 175px !important
 
+.macbook
+    position: absolute
+    width: 892px
+    height: 528px
+    left: 50%
+    margin-left: -446px
+    top: 430px
+    margin-top: -264px
+
 .slide-1
 	position: absolute
 	width: 100% 
 	height: 100% 
 	top: 0 
 	left: 0
+	z-index: 20
 	@include transition(all 0.5s ease-in-out) 
 	&.center
 		@include transform(translateX(0%))   
@@ -157,7 +172,7 @@ header
     height: 352px
     left: 50%
     margin-left: -100.5px
-    top: 235px
+    top: 228px
     overflow: hidden
 
 .slide-1-bg
@@ -186,11 +201,30 @@ header
       opacity: 0
       @include transition(all 0.5s ease-in-out)      
 
+.slide-2-bg-container
+    position: absolute
+    width: 668px
+    height: 422px
+    left: 50%
+    margin-left: -334.5px
+    top: 206px
+    overflow: hidden
+
+.slide-2-bg
+    position: relative
+    width: 892px 
+    height: 528px
+    background-image: url("../images/liberiaBackground@2x.jpg")
+    background-size: 100% auto 
+    background-position: center center
+    left: 50% !important
+    margin-left: -446px
+    margin-top: -30px
 
 .title
     font-weight: 300
-    color: #a2cef4
-    background-color: #031422
+    color: #000
+    background-color: #a0ffdc
     padding: 15px 30px 15px 20px
     position: absolute
     top: 109px
@@ -199,9 +233,9 @@ header
 
 .button
     font-weight: 300
-    color: #a2cef4
-    background-color: #031422
-    padding: 15px 50px 15px 20px
+    color: #000
+    background-color: #a0bbff
+    padding: 25px 60px 25px 25px
     position: absolute
     bottom: 0px
     z-index: 10
@@ -212,11 +246,11 @@ header
         position: absolute
         width: 12px 
         height: 20px 
-        background-image: url("../images/arrow@2x.png")
+        background-image: url("../images/arrowBlack@2x.png")
         background-size: 100% auto 
         @include transform(rotate(180deg))
-        right: 23px
-        top: 16px
+        right: 31px
+        top: 26px
 
 .left-arrow
     position: absolute 
@@ -269,20 +303,20 @@ header
     bottom: 0
     left: 0
     right: 0
-    background-color: #000
-    padding-top: 10px
+    padding-top: 20px
+    z-index: 10
+    height: 40px
     @media screen and (orientation: portrait)
       padding-bottom: 50px
 
-
 .pagination a
     display: inline-block
-    margin: 10px
+    margin: 0px
     width: 20px
     height: 20px
 
 .pagination a:before
-    background-color: #aaa
+    background-color: #a0bbff
     content: ""
     display: block
     width: 10px
@@ -300,9 +334,6 @@ header
 
 .pagination a.selected:before,
 .pagination a:hover:before 
-    background-color: #fff
+    background-color: #6787da
 
-.pagination a.selected:hover:before, .pagination a.selected:before 
-    width: 20px
-    height: 20px
-    margin: -5px 0 0 -5px
+
