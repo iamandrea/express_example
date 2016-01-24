@@ -21,7 +21,8 @@ header
   position: absolute
   width: 100%
   height: 125px
-  background-color: #f6c2e8
+  // background-color: #f6c2e8
+  background-color: #f5d5ec
   top: 0
   left: 0
   text-align: center
@@ -85,7 +86,7 @@ header
   outline: 0px solid transparent
   display: block
   @include transition(all 0.1s ease-in-out)
-  z-index: 2
+  z-index: 100
   &.inactive
     background-image: url("../images/hamburgerLight@2x.png")
   &.active
@@ -94,11 +95,11 @@ header
 .navBackground
   position: absolute
   width: 250px 
-  height: 210px 
+  height: 220px 
   background-color: #a0bbff
   top: 0
   right: 0
-  z-index: 1
+  z-index: 90
   display: block 
   @include transition(all 0.1s ease-in-out)
   opacity: 0
@@ -109,21 +110,45 @@ header
     font-weight: 300
     font-size: 16px
     padding-left: 1px
-    margin-top: 50px
+    margin-top: 45px
     text-align: center
-    line-height: 28px
-  li
-  	&.selected
-  	  font-weight: 600
+    line-height: 34px
+
+.navcontainer
+    position: absolute 
+    min-width: 100%
+    height: 100%
+    left: 0
+    margin: 0
+    top: 0px
+    z-index: 80
+    @include radial-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.7));
+    overflow: hidden    
+    visibility: hidden
+    opacity: 0
+    transition: visibility 0s, opacity 0.5s linear
+    @include transition(all 0.5s ease-in-out)
+    &.on 
+      visibility: visible
+      opacity: 1
 
 .container
-	position: absolute 
-	min-width: 100%
-	height: 100%
-	left: 0
-	margin: 0
-	top: 0px
-	overflow: hidden
+    position: absolute 
+    min-width: 100%
+    height: 100%
+    left: 0
+    margin: 0
+    top: 0px
+    overflow: hidden
+
+.page
+    visibility: hidden
+    opacity: 0
+    transition: visibility 0s, opacity 0.5s linear
+    @include transition(all 0.5s ease-in-out)
+    &.selected 
+      visibility: visible
+      opacity: 1
 
 .iphone
     position: absolute
@@ -135,36 +160,79 @@ header
 
 .macbook
     position: absolute
-    width: 892px
-    height: 528px
+    width: 800px
+    height: 473px
     left: 50%
-    margin-left: -446px
-    top: 430px
-    margin-top: -264px
+    margin-left: -400px
+    @media screen and (orientation: portrait) and (max-width: 700px)
+      position: absolute
+      width: 400px
+      height: 236px
+      left: 50%
+      margin-left: -200px
+    @media screen and (orientation: landscape) and (max-height: 700px)
+      width: 700px 
+      height: 414px 
+      margin-left: -350px
+    &.liberia
+      top: 200px
+      @media screen and (orientation: portrait) and (max-width: 700px)
+        top: 280px
+    &.reindeer
+      top: 200px
+      @media screen and (orientation: portrait) and (max-width: 700px)
+        top: 280px
+  
 
 .slide-1
-	position: absolute
-	width: 100% 
-	height: 100% 
-	top: 0 
-	left: 0
-	z-index: 20
-	@include transition(all 0.5s ease-in-out) 
-	&.center
-		@include transform(translateX(0%))   
-	&.left
-		@include transform(translateX(-100%))
-	&.right
-		@include transform(translateX(100%))
+  position: absolute
+  width: 100% 
+  height: 100% 
+  top: 0 
+  left: 0
+  z-index: 30
+  @include transition(all 0.5s ease-in-out) 
+  &.center
+    @include transform(translateX(0%))   
+  &.left
+    @include transform(translateX(-100%))
+    opacity: 0
+  &.right
+    @include transform(translateX(100%))
+    opacity: 0
 
 .slide-2
-	@extend .slide-1
-	&.center
-		@include transform(translateX(0%))   
-	&.left
-		@include transform(translateX(-100%))
-	&.right
-		@include transform(translateX(100%))
+  @extend .slide-1
+  &.center
+    @include transform(translateX(0%))   
+  &.left
+    @include transform(translateX(-100%))
+    opacity: 0
+  &.right
+    @include transform(translateX(100%))
+    opacity: 0
+
+.slide-3
+  @extend .slide-1
+  &.center
+    @include transform(translateX(0%))   
+  &.left
+    @include transform(translateX(-100%))
+    opacity: 0
+  &.right
+    @include transform(translateX(100%))
+    opacity: 0
+
+.slide-4
+  @extend .slide-1
+  &.center
+    @include transform(translateX(0%))   
+  &.left
+    @include transform(translateX(-100%))
+    opacity: 0
+  &.right
+    @include transform(translateX(100%))
+    opacity: 0
 
 .slide-1-bg-container
     position: absolute
@@ -201,30 +269,157 @@ header
       opacity: 0
       @include transition(all 0.5s ease-in-out)      
 
+.slide-2-girls
+  width: 241px
+  left: 50% !important
+  margin-left: -120.5px
+  top: 160px !important
+  @media screen and (orientation: portrait) and (max-width: 700px)
+    width: 115px
+    left: 50% !important
+    margin-left: -57.5px
+    top: 270px !important
+  @media screen and (orientation: landscape) and (max-height: 700px)
+    width: 200px
+    left: 50% !important
+    margin-left: -100px
+    top: 180px !important
+
+.slide-2-our-school-liberia
+  width: 547.5px
+  left: 50% !important
+  margin-left: -273.75px
+  top: 350px !important
+  @media screen and (orientation: portrait) and (max-width: 700px)
+    width: 300px
+    left: 50% !important
+    margin-left: -150px
+    top: 370px !important
+  @media screen and (orientation: landscape) and (max-height: 700px)
+    width: 450px
+    left: 50% !important
+    margin-left: -225px
+    top: 350px !important
+
 .slide-2-bg-container
     position: absolute
-    width: 668px
-    height: 422px
+    width: 598px
+    height: 377px
     left: 50%
-    margin-left: -334.5px
-    top: 206px
+    margin-left: -300px
+    top: 235px
     overflow: hidden
+    @media screen and (orientation: portrait) and (max-width: 700px)
+      position: absolute
+      width: 300px
+      height: 192px
+      left: 50%
+      margin-left: -150px
+      top: 298px
+      overflow: hidden
+    @media screen and (orientation: landscape) and (max-height: 700px)
+      width: 530px
+      height: 335px
+      margin-left: -265px
+      top: 231px
 
 .slide-2-bg
     position: relative
-    width: 892px 
-    height: 528px
+    width: 700px
+    height: 437px
     background-image: url("../images/liberiaBackground@2x.jpg")
     background-size: 100% auto 
     background-position: center center
     left: 50% !important
-    margin-left: -446px
+    margin-left: -350px
     margin-top: -30px
+    @media screen and (orientation: portrait) and (max-width: 700px)
+      width: 440px
+      height: 280px
+      margin-left: -220px
+
+.slide-3-bg-container
+    position: absolute
+    width: 598px
+    height: 377px
+    left: 50%
+    margin-left: -300px
+    top: 235px
+    overflow: hidden
+    background-color: #0a2e4d
+    @media screen and (orientation: portrait) and (max-width: 700px)
+      position: absolute
+      width: 300px
+      height: 192px
+      left: 50%
+      margin-left: -150px
+      top: 298px
+      overflow: hidden
+    @media screen and (orientation: landscape) and (max-height: 700px)
+      width: 530px
+      height: 335px
+      margin-left: -265px
+      top: 231px
+
+
+.slide-3-reindeerhouse
+    width: 250px
+    left: 50% !important
+    margin-left: -125px
+    top: 297px !important
+    @media screen and (orientation: portrait) and (max-width: 700px)
+      width: 150px
+      margin-left: -75px
+      top: 301px !important
+    @media screen and (orientation: landscape) and (max-height: 700px)
+      top: 314px !important
+      width: 200px
+      margin-left: -100px
+
+.slide-3-reindeer
+    width: 200px
+    left: 50% !important
+    margin-left: -100px
+    top: 140px !important
+    @media screen and (orientation: portrait) and (max-width: 700px)
+      width: 100px
+      left: 50% !important
+      margin-left: -50px
+      top: 270px !important
+    @media screen and (orientation: landscape) and (max-height: 700px)
+      top: 190px !important
+      width: 150px
+      margin-left: -75px
+
+.slide-4-bg-container
+    position: absolute
+    width: 195px
+    height: 346px
+    left: 50%
+    margin-left: -100px
+    top: 232px
+    background-color: #fff
+    border: 1px solid #DDD
+    overflow: hidden
+
+.slide-4-infobox
+    width: 195px
+    left: 50% !important
+    margin-left: -99px 
+    top: 340px !important
+    z-index: 15
+
+.slide-4-pandora
+    width: 130px
+    left: 50% !important
+    margin-left: -65px
+    top: 260px !important
+    z-index: 10
 
 .title
     font-weight: 300
     color: #000
-    background-color: #a0ffdc
+    background-color: #a0bbff
     padding: 15px 30px 15px 20px
     position: absolute
     top: 109px
@@ -234,13 +429,13 @@ header
 .button
     font-weight: 300
     color: #000
-    background-color: #a0bbff
+    background-color: #a0ffdc
     padding: 25px 60px 25px 25px
     position: absolute
     bottom: 0px
-    z-index: 10
     margin-bottom: 0px
     right: 0px
+    z-index: 20
     &::after
         content: ""
         position: absolute
@@ -265,7 +460,9 @@ header
       left: 20px
       width: 30px 
       height: 52px 
-    @media screen and (max-height: 750px)
+    @media screen and (max-width: 781px)
+      display: none
+    @media screen and (max-height: 630px)
       top: 60% 
       margin-top: -26px 
     @media screen and (orientation: landscape) and (max-height: 500px)
@@ -288,7 +485,9 @@ header
       right: 20px
       width: 30px 
       height: 52px 
-    @media screen and (max-height: 750px)
+    @media screen and (max-width: 781px)
+      display: none
+    @media screen and (max-height: 630px)
       top: 60% 
       margin-top: -26px 
     @media screen and (orientation: landscape) and (max-height: 500px)
@@ -301,13 +500,15 @@ header
     text-align: center
     position: absolute
     bottom: 0
-    left: 0
-    right: 0
+    left: 30%
+    right: 30%
     padding-top: 20px
     z-index: 10
-    height: 40px
+    height: 30px
+    background-color: rgba(255,255,255,0.5)
     @media screen and (orientation: portrait)
       padding-bottom: 50px
+      height: 50px
 
 .pagination a
     display: inline-block
@@ -337,3 +538,20 @@ header
     background-color: #6787da
 
 
+a:link
+    color: #000
+    text-decoration: none
+    &.selected
+      font-weight: 600
+
+a:visited
+    color: #000
+    text-decoration: none
+
+a:hover
+    color: #000
+    text-decoration: underline
+
+a:active
+    color: #000
+    text-decoration: none
