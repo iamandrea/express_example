@@ -1,5 +1,6 @@
 @import "bourbon/bourbon"
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500,700,900)
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,800,700,300,600)
 
 @mixin striped-bg($bg-color: #f2f2f2, $darken-amount: 5%, $stripe-color: #eee)
   background-color: $bg-color
@@ -13,6 +14,7 @@ body
   padding: 0 
   margin: 0
   width: 100% 
+  overflow: scroll !important
   height: 100% 
   font: 16px "Roboto", sans-serif
   @include striped-bg
@@ -21,11 +23,11 @@ header
   position: absolute
   width: 100%
   height: 125px
-  // background-color: #f6c2e8
   background-color: #f5d5ec
   top: 0
   left: 0
   text-align: center
+  z-index: 1000
   p
   	position: relative
   	color: #000
@@ -183,56 +185,35 @@ header
       @media screen and (orientation: portrait) and (max-width: 700px)
         top: 280px
   
+.slides
+  position: fixed
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
 
 .slide-1
-  position: absolute
+  position: relative
   width: 100% 
   height: 100% 
   top: 0 
   left: 0
   z-index: 30
   @include transition(all 0.5s ease-in-out) 
-  &.center
-    @include transform(translateX(0%))   
-  &.left
-    @include transform(translateX(-100%))
-    opacity: 0
-  &.right
-    @include transform(translateX(100%))
-    opacity: 0
 
 .slide-2
   @extend .slide-1
-  &.center
-    @include transform(translateX(0%))   
-  &.left
-    @include transform(translateX(-100%))
-    opacity: 0
-  &.right
-    @include transform(translateX(100%))
-    opacity: 0
 
 .slide-3
   @extend .slide-1
-  &.center
-    @include transform(translateX(0%))   
-  &.left
-    @include transform(translateX(-100%))
-    opacity: 0
-  &.right
-    @include transform(translateX(100%))
-    opacity: 0
 
 .slide-4
   @extend .slide-1
-  &.center
-    @include transform(translateX(0%))   
-  &.left
-    @include transform(translateX(-100%))
-    opacity: 0
-  &.right
-    @include transform(translateX(100%))
-    opacity: 0
+
+.slick-list
+  position: absolute
+  width: 100% 
+  height: 100%
 
 .slide-1-bg-container
     position: absolute
@@ -260,7 +241,7 @@ header
     left: 50% !important
     margin-left: -95px 
     top: 55% !important
-    margin-top: -78px 
+    margin-top: 320px
     @media screen and (max-height: 700px)
       top: 65% !important	
     @media screen and (max-height: 490px)
@@ -361,7 +342,6 @@ header
       margin-left: -265px
       top: 231px
 
-
 .slide-3-reindeerhouse
     width: 250px
     left: 50% !important
@@ -423,7 +403,7 @@ header
     padding: 15px 30px 15px 20px
     position: absolute
     top: 109px
-    left: 0px
+    left: -50px
     z-index: 10
 
 .button
@@ -449,6 +429,7 @@ header
 
 .left-arrow
     position: absolute 
+    display: block
     width: 53px
     height: 93px 
     top: 50% 
@@ -456,11 +437,12 @@ header
     left: 40px 
     background-image: url("../images/arrow@2x.png")
     background-size: 100% auto 
+    z-index: 200
     @media screen and (orientation: portrait)
       left: 20px
       width: 30px 
       height: 52px 
-    @media screen and (max-width: 781px)
+    @media screen and (max-height: 420px)
       display: none
     @media screen and (max-height: 630px)
       top: 60% 
@@ -473,6 +455,7 @@ header
 
 .right-arrow
     position: absolute 
+    display: block
     width: 53px
     height: 93px 
     top: 50% 
@@ -480,12 +463,13 @@ header
     right: 40px 
     background-image: url("../images/arrow@2x.png")
     background-size: 100% auto 
+    z-index: 200
     @include transform(rotate(180deg))
     @media screen and (orientation: portrait)
       right: 20px
       width: 30px 
       height: 52px 
-    @media screen and (max-width: 781px)
+    @media screen and (max-height: 420px)
       display: none
     @media screen and (max-height: 630px)
       top: 60% 
@@ -496,46 +480,51 @@ header
       height: 52px 
       top: 65%
 
-.pagination
-    text-align: center
-    position: absolute
-    bottom: 0
-    left: 30%
-    right: 30%
-    padding-top: 20px
-    z-index: 10
-    height: 30px
-    background-color: rgba(255,255,255,0.5)
-    @media screen and (orientation: portrait)
-      padding-bottom: 50px
-      height: 50px
+// .pagination
+//     text-align: center
+//     position: absolute
+//     bottom: 0
+//     left: 30%
+//     right: 30%
+//     padding-top: 20px
+//     z-index: 10
+//     height: 30px
+//     background-color: rgba(255,255,255,0.5)
+//     @media screen and (orientation: portrait)
+//       padding-bottom: 50px
+//       height: 50px
+//       width: 100% 
+//       left: 50% 
+//       margin-left: -50%
+//     @media screen and (max-height: 720px)
+//       display: none
 
-.pagination a
-    display: inline-block
-    margin: 0px
-    width: 20px
-    height: 20px
+// .pagination a
+//     display: inline-block
+//     margin: 0px
+//     width: 20px
+//     height: 20px
 
-.pagination a:before
-    background-color: #a0bbff
-    content: ""
-    display: block
-    width: 10px
-    height: 10px
-    -webkit-border-radius: 100%
-    -moz-border-radius: 100%
-    -ms-border-radius: 100%
-    border-radius: 100%
-    @include transition(all 0.3s ease)
+// .pagination a:before
+//     background-color: #a0bbff
+//     content: ""
+//     display: block
+//     width: 10px
+//     height: 10px
+//     -webkit-border-radius: 100%
+//     -moz-border-radius: 100%
+//     -ms-border-radius: 100%
+//     border-radius: 100%
+//     @include transition(all 0.3s ease)
 
-.pagination a:hover:before
-    width: 15px
-    height: 15px
-    margin: -2px 0 0 -2px
+// .pagination a:hover:before
+//     width: 15px
+//     height: 15px
+//     margin: -2px 0 0 -2px
 
-.pagination a.selected:before,
-.pagination a:hover:before 
-    background-color: #6787da
+// .pagination a.selected:before,
+// .pagination a:hover:before 
+//     background-color: #6787da
 
 
 a:link
@@ -555,3 +544,130 @@ a:hover
 a:active
     color: #000
     text-decoration: none
+
+h1
+  margin: 80px
+  top: 90px
+  position: absolute
+  font-size: 45px
+  font-family: "Open Sans"
+  color: #7aa0ff
+  font-weight: lighter
+  text-shadow: 0px 4px 0px rgba(245, 213, 236, 1)
+  @media screen and (orientation: landscape)
+    &.portrait
+      display: none
+  @media screen and (orientation: portrait)
+    line-height: 50px
+    margin-left: 50px
+    &.landscape
+      display: none
+
+.content
+  position: absolute
+  width: 90%
+  left: 50%
+  margin-left: -45%
+  padding: 0px
+  top: 270px
+  height: auto
+  min-height: 430px
+  margin-bottom: 100px
+  display: block
+  background-color: rgba(255,255,255,0.5)
+  font-family: "Roboto"
+  img
+    position: absolute
+    width: 300px
+    left: 50%
+    margin-left: -150px
+    margin-top: 25px
+    margin-bottom: 35px
+  .about-me
+    position: absolute
+    padding-top: 90px
+    margin-top: 50px
+    text-align: center
+    font-family: "Roboto"
+    font-weight: 100
+    top: 150px
+    width: 90%
+    left: 50%
+    margin-left: -45%
+  @media screen and (max-width: 401px)
+    min-height: 650px
+    margin-bottom: 20px
+  @media screen and (min-width: 401px) and (max-width: 550px)
+    min-height: 610px
+    margin-bottom: 20px
+  @media screen and (min-width: 551px) and (max-width: 1004px)
+    min-height: 550px
+    margin-bottom: 20px
+  @media screen and (min-width: 1005px)
+    min-height: 470px
+    margin-bottom: 20px
+
+.contactus
+  position: absolute
+  width: 90%
+  left: 50%
+  margin-left: -45%
+  padding: 0px
+  top: 270px
+  height: auto
+  min-height: 95px
+  margin-bottom: 100px
+  display: block
+  background-color: rgba(255,255,255,0.5)
+  font-family: "Roboto"
+  font-weight: 100
+  text-align: center
+  line-height: 24px
+  padding-top: 20px
+
+.page-websites
+  position: absolute
+  width: 100%
+  height: 100%
+  overflow: hidden
+
+.page-about
+  position: absolute
+  width: 100%
+  min-height: 100%
+  overflow: scroll
+
+.page-painting
+  position: absolute
+  width: 100%
+  min-height: 100%
+  overflow: scroll
+
+.paintingcontainer
+    position: absolute
+    width: 90%
+    left: 50%
+    margin-left: -45%
+    top: 300px
+    height: auto 
+    overflow: scroll
+    +transition(transform 0.5s ease)
+
+.gallery 
+  .imgbox
+    position: relative
+    margin: 10px 10px 10px 10px
+    width: 300px
+    height: 200px
+    overflow: hidden
+    float: left
+    img
+      position: absolute
+      width: 400px
+      left: 50%
+      margin-left: -200px
+      top: 50%
+      margin-top: -120px
+
+.slick-slide:focus
+  outline: none !important
