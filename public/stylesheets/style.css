@@ -253,14 +253,14 @@ header {
       left: 50%;
       margin-left: -150px;
       height: 177.5px; } }
-  @media screen and (orientation: portrait) and (min-width: 401px) and (max-width: 700px) {
+  @media screen and (orientation: portrait) and (min-width: 401px) and (max-width: 785px) {
     .macbook {
       position: absolute;
       width: 400px;
       height: 236px;
       left: 50%;
       margin-left: -200px; } }
-  @media screen and (orientation: landscape) and (max-height: 700px) {
+  @media screen and (orientation: landscape) and (max-height: 785px) {
     .macbook {
       width: 700px;
       height: 414px;
@@ -270,7 +270,7 @@ header {
     @media screen and (orientation: portrait) and (max-width: 400px) {
       .macbook.liberia {
         top: 250px; } }
-    @media screen and (orientation: portrait) and (min-width: 401px) and (max-width: 700px) {
+    @media screen and (orientation: portrait) and (min-width: 401px) and (max-width: 785px) {
       .macbook.liberia {
         top: 280px; } }
   .macbook.reindeer {
@@ -278,7 +278,7 @@ header {
     @media screen and (orientation: portrait) and (max-width: 400px) {
       .macbook.reindeer {
         top: 250px; } }
-    @media screen and (orientation: portrait) and (min-width: 401px) and (max-width: 700px) {
+    @media screen and (orientation: portrait) and (min-width: 401px) and (max-width: 785px) {
       .macbook.reindeer {
         top: 280px; } }
 
@@ -377,13 +377,13 @@ header {
       margin-left: -45px;
       left: 50% !important;
       top: 260px !important; } }
-  @media screen and (orientation: portrait) and (min-width: 401px) and (max-width: 700px) {
+  @media screen and (orientation: portrait) and (min-width: 401px) and (max-width: 785px) {
     .slide-2-girls {
       width: 115px;
       left: 50% !important;
       margin-left: -57.5px;
       top: 270px !important; } }
-  @media screen and (orientation: landscape) and (max-height: 700px) {
+  @media screen and (orientation: landscape) and (max-height: 785px) {
     .slide-2-girls {
       width: 200px;
       left: 50% !important;
@@ -401,13 +401,13 @@ header {
       left: 50% !important;
       margin-left: -91px;
       top: 340px !important; } }
-  @media screen and (orientation: portrait) and (min-width: 401px) and (max-width: 700px) {
+  @media screen and (orientation: portrait) and (min-width: 401px) and (max-width: 785px) {
     .slide-2-our-school-liberia {
       width: 300px;
       left: 50% !important;
       margin-left: -150px;
       top: 370px !important; } }
-  @media screen and (orientation: landscape) and (max-height: 700px) {
+  @media screen and (orientation: landscape) and (max-height: 785px) {
     .slide-2-our-school-liberia {
       width: 450px;
       left: 50% !important;
@@ -429,16 +429,16 @@ header {
       left: 50%;
       margin-left: -115px;
       top: 260px; } }
-  @media screen and (orientation: portrait) and (min-width: 401px) and (max-width: 700px) {
+  @media screen and (orientation: portrait) and (min-width: 401px) and (max-width: 785px) {
     .slide-2-bg-container {
       position: absolute;
       width: 300px;
       height: 192px;
       left: 50%;
       margin-left: -150px;
-      top: 298px;
+      top: 296px;
       overflow: hidden; } }
-  @media screen and (orientation: landscape) and (max-height: 700px) {
+  @media screen and (orientation: landscape) and (max-height: 785px) {
     .slide-2-bg-container {
       width: 530px;
       height: 335px;
@@ -455,7 +455,7 @@ header {
   left: 50% !important;
   margin-left: -350px;
   margin-top: -30px; }
-  @media screen and (orientation: portrait) and (max-width: 700px) {
+  @media screen and (orientation: portrait) and (max-width: 785px) {
     .slide-2-bg {
       width: 440px;
       height: 280px;
@@ -479,7 +479,7 @@ header {
       margin-left: -115px;
       top: 263px;
       overflow: hidden; } }
-  @media screen and (orientation: portrait) and (min-width: 401px) and (max-width: 700px) {
+  @media screen and (orientation: portrait) and (min-width: 401px) and (max-width: 785px) {
     .slide-3-bg-container {
       position: absolute;
       width: 300px;
@@ -488,7 +488,7 @@ header {
       margin-left: -150px;
       top: 298px;
       overflow: hidden; } }
-  @media screen and (orientation: landscape) and (max-height: 700px) {
+  @media screen and (orientation: landscape) and (max-height: 785px) {
     .slide-3-bg-container {
       width: 530px;
       height: 335px;
@@ -505,12 +505,12 @@ header {
       width: 105px;
       margin-left: -52.5px;
       top: 251px !important; } }
-  @media screen and (orientation: portrait) and (min-width: 401px) and (max-width: 700px) {
+  @media screen and (orientation: portrait) and (min-width: 401px) and (max-width: 785px) {
     .slide-3-reindeerhouse {
       width: 150px;
       margin-left: -75px;
       top: 301px !important; } }
-  @media screen and (orientation: landscape) and (max-height: 700px) {
+  @media screen and (orientation: landscape) and (max-height: 785px) {
     .slide-3-reindeerhouse {
       top: 314px !important;
       width: 200px;
@@ -527,13 +527,13 @@ header {
       left: 50% !important;
       margin-left: -40px;
       top: 230px !important; } }
-  @media screen and (orientation: portrait) and (min-width: 401px) and (max-width: 700px) {
+  @media screen and (orientation: portrait) and (min-width: 401px) and (max-width: 785px) {
     .slide-3-reindeer {
       width: 100px;
       left: 50% !important;
       margin-left: -50px;
       top: 270px !important; } }
-  @media screen and (orientation: landscape) and (max-height: 700px) {
+  @media screen and (orientation: landscape) and (max-height: 785px) {
     .slide-3-reindeer {
       top: 190px !important;
       width: 150px;
@@ -553,7 +553,7 @@ header {
     .slide-4-bg-container {
       position: absolute;
       width: 116px;
-      height: 346px;
+      height: 209px;
       left: 50%;
       margin-left: -60px;
       top: 227px; } }
@@ -638,66 +638,63 @@ header {
     .button {
       top: 700px; } }
 
-.left-arrow {
+.slick-prev {
   position: absolute;
   display: block;
   width: 53px;
   height: 93px;
   top: 50%;
-  margin-top: -46.5px;
-  left: 40px;
-  background-image: url("../images/arrow@2x.png");
+  left: 20px;
+  background-image: url("../images/arrowprev@2x.png");
   background-size: 100% auto;
   z-index: 200; }
+  .slick-prev::before {
+    content: ""; }
   @media screen and (orientation: portrait) {
-    .left-arrow {
+    .slick-prev {
       left: 20px;
       width: 30px;
       height: 52px; } }
   @media screen and (max-height: 420px) {
-    .left-arrow {
+    .slick-prev {
       display: none; } }
   @media screen and (max-height: 630px) {
-    .left-arrow {
+    .slick-prev {
       top: 60%;
       margin-top: -26px; } }
   @media screen and (orientation: landscape) and (max-height: 500px) {
-    .left-arrow {
+    .slick-prev {
       left: 20px;
       width: 30px;
       height: 52px;
       top: 65%; } }
 
-.right-arrow {
+.slick-next {
   position: absolute;
   display: block;
   width: 53px;
   height: 93px;
   top: 50%;
-  margin-top: -46.5px;
-  right: 40px;
-  background-image: url("../images/arrow@2x.png");
+  right: 20px;
+  background-image: url("../images/arrownext@2x.png");
   background-size: 100% auto;
-  z-index: 200;
-  -webkit-transform: rotate(180deg);
-  -moz-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
-  -o-transform: rotate(180deg);
-  transform: rotate(180deg); }
+  z-index: 200; }
+  .slick-next::before {
+    content: ""; }
   @media screen and (orientation: portrait) {
-    .right-arrow {
+    .slick-next {
       right: 20px;
       width: 30px;
       height: 52px; } }
   @media screen and (max-height: 420px) {
-    .right-arrow {
+    .slick-next {
       display: none; } }
   @media screen and (max-height: 630px) {
-    .right-arrow {
+    .slick-next {
       top: 60%;
       margin-top: -26px; } }
   @media screen and (orientation: landscape) and (max-height: 500px) {
-    .right-arrow {
+    .slick-next {
       right: 20px;
       width: 30px;
       height: 52px;
@@ -876,5 +873,42 @@ h1 {
   @media screen and (max-width: 295px) {
     .orientationContainer {
       display: block !important; } }
+  @media screen and (max-height: 350px) {
+    .orientationContainer {
+      display: block !important; } }
+  .orientationContainer .logo {
+    padding: 45px 0 15px 0;
+    width: 218px;
+    height: 119px;
+    left: 50%;
+    margin-left: -109px;
+    position: absolute; }
+    @media screen and (max-height: 350px) {
+      .orientationContainer .logo {
+        padding: 25px 0 15px 0;
+        width: 140px;
+        height: 76px;
+        left: 50%;
+        margin-left: -70px;
+        position: absolute; } }
+  .orientationContainer p {
+    text-align: center;
+    font-family: "Roboto";
+    text-transform: uppercase;
+    font-weight: 300;
+    width: 202px;
+    left: 50%;
+    margin-left: -101px;
+    position: absolute;
+    top: 180px; }
+    @media screen and (max-height: 350px) {
+      .orientationContainer p {
+        top: 100px; } }
+
+.slick-dots li button:before {
+  font-size: 25px; }
+
+.slick-dots {
+  bottom: -35px; }
 
 /*# sourceMappingURL=style.css.map */

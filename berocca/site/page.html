@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<body>
+		<head>
+			<link rel="stylesheet" type="text/css" href="../partial/css/mrec.css">
+	</head>
+<body>
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<div id="container">
+
+	<div class="invisible-container">
+		<div id="game-frame">
+			<div class="timer">00:<span class="seconds">30</span></div>
+			<p id="tap-to-kick">TAP TO KICK</p>
+			<img src="../pub/img/boost-logo-2x.png" class="logo">
+			<img src="../pub/img/blue-water-2x.png" class="clear-water">
+			<img src="../pub/img/pink-water-2x.png" class="pink-water">
+			<img src="../pub/img/bubble-2x.png" class="bubble-1">
+			<img src="../pub/img/bubble-2x.png" class="bubble-2">
+			<img src="../pub/img/bubble-2x.png" class="bubble-3">
+			<img src="../pub/img/glass-2x.png" class="glass">
+			<img src="../pub/img/ninja-2x.png" class="ninja">
+			<canvas id="game" width="300" height="500"></canvas>
+		</div>
+
+	<!-- 	<div id="interlude">
+			<img src="../pub/img/boost-lockup-2x.png" class="boost-lockup">
+			<img src="../pub/img/ninja-lockup-2x.png" class="ninja-lockup">
+			<button id="back-to-game">BACK TO GAME</button>
+			<img src="../pub/img/bayer-2x.png" class="bayer">
+		</div> -->
+
+		<div id="end-frame">
+			<div class="replay">REPLAY</div>
+			<img src="../pub/img/boost-lockup-2x.png" class="boost-lockup">
+			<img src="../pub/img/ninja-lockup-2x.png" class="ninja-lockup">
+			<button id="you-scored">YOU SCORED <span class="final-score">0</span></button>
+			<img src="../pub/img/bayer-2x.png" class="bayer">
+		</div>
+
+
+		<div class="score">00</div>
+		<a href="https://www.facebook.com/Berocca" target="_blank">
+			<div id="find-out-more">
+				<img src="../pub/img/button-2x.png" class="find-out-more">
+			</div>
+		</a>
+	</div>
+
+</div>
+	<script src="../pub/jquery.min.js"></script>
+	<script src="../pub/hammer.min.js"></script>
+	<script src="../partial/js/mrec.js"></script>
+</body>
+</html>

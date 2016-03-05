@@ -1,0 +1,478 @@
+@import bourbon
+
+//
+// Variables
+//
+//
+
+@include font-face("letsgodigital", "../../pub/fonts/letsgodigital")
+
+$font-stack-numbers: letsgodigital, Helvetica, Arial, sans-serif
+$font-stack: "Myriad Pro", "Gill Sans", "Gill Sans MT", Calibri, sans-serif
+$fg: #ffffff
+$bg: #000000
+
+//
+// Mixins
+//
+
+=background-size($size)
+	-webkit-background-size: $size
+	background-size: $size
+
+=border-radius($radius)
+	border-radius: $radius
+	border-top-left-radius: $radius
+	border-top-right-radius: $radius
+	border-bottom-left-radius: $radius
+	border-bottom-right-radius: $radius
+
+=no-select
+	-webkit-touch-callout: none
+	user-select: none
+
+=no-backface-visibility
+	-webkit-backface-visibility: hidden
+	backface-visibility: hidden
+
+
+//
+// Container & primary overlays (orientation, loading, etc.) setup
+//
+html *
+	+no-select
+	+box-sizing(border-box)
+
+html, body
+	width: 100%
+	height: 100%
+	margin: 0
+
+body
+	position: absolute
+	font-family: $font-stack
+	color: $fg
+	background-color: $bg
+	overflow: hidden
+
+
+//
+//  Main styles
+//
+#container
+	position: absolute
+	width: 100%
+	height: 100%
+	top: 0px
+	left: 0px
+	overflow: hidden
+	background-image: url("../../pub/img//background-2x.jpg")
+	background-size: 100% 100%
+	+no-backface-visibility
+
+.invisible-container
+	position: absolute
+	width: 320px
+	height: 500px
+	left: 50%
+	margin-left: -160px
+	+no-backface-visibility
+
+#game
+	position: absolute
+	left: 50%
+	margin-left: -150px
+	top: 0%
+
+#game-frame
+	position: absolute
+	width: 100% 
+	height: 100% 
+	@include no-backface-visibility
+	@include animation-duration(1s)
+
+// #interlude
+// 	position: absolute
+// 	width: 100% 
+// 	height: 100% 
+// 	overflow: hidden
+// 	@include transform(translateX(300px))
+// 	@include no-backface-visibility
+// 	@include animation-duration(1s)
+
+#end-frame
+	position: absolute
+	width: 100% 
+	height: 100% 
+	@include transform(translateX(100%))
+	opacity: 0
+	@include no-backface-visibility
+	@include animation-duration(1s)
+
+.slide-left
+	@include animation-fill-mode(forwards)
+	@include animation-name(slideLeft)
+	@include animation-timing-function(ease-in)
+	@include animation-iteration-count(1)
+	@include animation-direction(forwards)
+
+.slide-right
+	@include animation-fill-mode(forwards)
+	@include animation-name(slideRight)
+	@include animation-timing-function(ease-in)
+	@include animation-iteration-count(1)
+	@include animation-direction(forwards)
+
+.slide-in
+	@include animation-fill-mode(forwards)
+	@include animation-name(slideIn)
+	@include animation-timing-function(ease-in)
+	@include animation-iteration-count(1)
+	@include animation-direction(forwards)
+
+.slide-back
+	@include animation-fill-mode(forwards)
+	@include animation-name(slideBack)
+	@include animation-timing-function(ease-in)
+	@include animation-iteration-count(1)
+	@include animation-direction(forwards)
+
+.slide-down
+	@include animation-fill-mode(forwards)
+	@include animation-name(slideDown)
+	@include animation-timing-function(ease-in)
+	@include animation-iteration-count(1)
+	@include animation-direction(forwards)
+
+.slide-up
+	@include animation-fill-mode(forwards)
+	@include animation-name(slideUp)
+	@include animation-timing-function(ease-in)
+	@include animation-iteration-count(1)
+	@include animation-direction(forwards)
+
+@include keyframes(slideUp)
+	0%
+		@include transform(translateY(0px))
+	100%
+		@include transform(translateY(-40px))
+
+@include keyframes(slideDown)
+	0%
+		@include transform(translateY(-40px))
+	100%
+		@include transform(translateY(0px))
+
+@include keyframes(slideLeft)
+	0%
+		@include transform(translateX(0%))
+		opacity: 1
+	100%
+		@include transform(translateX(-100%))
+		opacity: 0
+
+@include keyframes(slideRight)
+	0%
+		@include transform(translateX(0%))
+		opacity: 1
+	100%
+		@include transform(translateX(100%))
+		opacity: 0
+
+@include keyframes(slideIn)
+	0%
+		@include transform(translateX(100%))
+		opacity: 0
+	100%
+		@include transform(translateX(0%))	
+		opacity: 1
+
+@include keyframes(slideBack)
+	0%
+		@include transform(translateX(-100%))
+		opacity: 0
+	100%
+		@include transform(translateX(0%))		
+		opacity: 1
+
+#canvas
+	position: fixed
+	width: 300px
+	height: 100%
+
+.ninja
+	position: absolute
+	width: 115.5px
+	height: 96px
+	top: 200px
+	left: 0px
+	@include transform(rotate(-25deg))
+	@include no-backface-visibility
+	@include animation-duration(0.5s)
+
+.kick
+	@include transform-origin(center bottom)
+	@include animation-name(kick)
+	@include animation-timing-function(ease-in-out)
+	@include animation-iteration-count(1)
+
+@include keyframes(kick)
+	0%
+		@include transform(rotate(-25deg))
+	50%
+		@include transform(rotate(0deg))
+	100%
+		@include transform(rotate(-25deg))
+
+.glass
+	position: absolute
+	width: 65px
+	right: 10px
+	bottom: 195px
+
+.clear-water
+	position: absolute
+	width: 65px
+	right: 10px
+	bottom: 195px
+	
+.pink-water
+	position: absolute
+	width: 65px
+	right: 10px
+	bottom: 195px
+	opacity: 0
+	@include no-backface-visibility
+	@include animation-duration(2s)
+
+.fizzle
+	@include animation-name(fizzle)
+	@include animation-timing-function(ease-in-out)
+	@include animation-iteration-count(1)
+
+@include keyframes(fizzle)
+	0%
+		opacity: 0
+	50% 
+		opacity: 1
+	100% 
+		opacity: 0
+
+.bubble-1
+	position: absolute
+	width: 12px
+	top: 155px
+	opacity: 0.5
+	right: 47px
+	opacity: 0
+	@include no-backface-visibility
+	@include animation-duration(1s)
+
+.bubble-2
+	position: absolute
+	width: 11px
+	top: 157px
+	opacity: 0.5
+	right: 36px
+	opacity: 0
+	@include no-backface-visibility
+	@include animation-duration(1.5s)
+
+.bubble-3
+	position: absolute
+	width: 10px
+	top: 155px
+	opacity: 0.5
+	right: 26px
+	opacity: 0
+	@include no-backface-visibility
+	@include animation-duration(1.25s)
+
+.bubble-up
+	@include animation-name(bubbleup)
+	@include animation-timing-function(ease-in-out)
+	@include animation-iteration-count(1)
+
+@include keyframes(bubbleup)
+	0%
+		opacity: 0
+		@include transform(translateY(0px))
+	50% 
+		opacity: 0.5
+		@include transform(translateY(-30px))
+	75%
+		opacity: 0
+	100% 
+		opacity: 0
+		@include transform(translateY(0px))
+
+		
+.find-out-more
+	position: absolute
+	left: 50%
+	border: 0
+	bottom: 10px
+	outline: none
+	margin-left: -54px
+	width: 108px
+	height: 27.5px
+
+
+.logo
+	position: absolute
+	width: 94.5px
+	right: 0
+	top: 12px
+
+
+.score
+	font-family: $font-stack-numbers
+	position: absolute
+	text-align: center
+	font-size: 1.5em
+	background-color: #059447
+	padding: 18px 10px 5px
+	border-radius: 5px
+	border: 1px solid #fff
+	top: -15px
+	left: 0
+
+#tap-to-kick
+	position: absolute
+	text-align: center
+	width: 150px
+	background-color: #059447
+	padding: 12px 2px 7px 0px
+	border-radius: 100px
+	border: 1px solid #fff
+	font-size: 1.2em
+	left: 50%
+	margin-left: -75px
+	top: 30%
+	z-index: 2
+	opacity: 0.8	
+	font-weight: lighter
+	@include no-backface-visibility
+	@include animation-duration(0.5s)
+
+.fadeOut
+	@include animation-name(fadeOut)
+	@include animation-timing-function(ease-in)
+	@include animation-iteration-count(1)
+	@include animation-direction(forwards)
+	@include animation-fill-mode(forwards)
+
+@include keyframes(fadeOut)
+	0%
+		opacity: 0.8
+	100%
+		opacity: 0
+
+.timer
+	position: absolute
+	font-family: letsgodigital, Helvetica, Arial, sans-serif
+	background-color: #fe4119
+	padding: 8px 0px 5px
+	width: 90px
+	left: 50%
+	margin-left: -45px
+	text-align: center
+	border: 1px solid white
+	border-radius: 7px
+	top: -5px
+	font-size: 1.5em
+	@include transform(translateY(-40px))
+	@include no-backface-visibility
+	@include animation-duration(1s)
+
+.boost-lockup
+	position: absolute
+	width: 130px
+	left: 105px
+	top: 35px
+
+.ninja-lockup
+	position: absolute
+	width: 100px
+	top: 100px
+	left: 10px
+	
+.bayer
+	position: absolute
+	width: 238.5px
+	top: 258px
+	margin-left: -119.5px
+	left: 50%
+
+button
+	position: absolute
+	width: 210px
+	height: 40px
+	background-color: #059447
+	border: 2px solid white
+	border-radius: 8px
+	color: #fff
+	font-size: 1.2em
+	text-align: right
+	top: 125px
+	font-style: italic
+	outline: none
+	box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.3)
+
+#back-to-game
+	margin-left: -10px
+	padding-right: 17px
+	&::before
+		content: ""
+		position: absolute
+		width: 15px
+		height: 20px
+		background-image: url("../../pub/img/arrow-2x.png")
+		background-size: 100% auto
+		left: 20px
+		top: 8px
+
+#you-scored
+	left: 50%
+	margin-left: -105px
+	text-align: center
+	padding-right: 40px
+	outline: none
+	top: 200px 
+
+.final-score
+	font-family: $font-stack-numbers
+	font-size: 1.4em
+	color: #ffde00
+	font-style: normal
+	top: 5px
+	position: absolute
+	right: 25px
+
+.replay
+	position: absolute
+	width: 88px
+	height: 35px
+	background-color: #ffde00
+	padding-top: 10px
+	padding-left: 19px
+	text-align: center
+	font-size: 1em
+	font-style: italic
+	color: #005221
+	right: 0px
+	border-radius: 5px
+	margin-top: -4px
+	border: 1px solid #fff
+	z-index: 10
+	&::before
+		content: ""
+		position: absolute
+		width: 14px
+		height: 18px
+		background-image: url("../../pub/img/replay-2x.png")
+		background-size: 100% auto
+		left: 7px
+		top: 9px
+
+
