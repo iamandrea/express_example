@@ -7,7 +7,6 @@ body {
   padding: 0;
   margin: 0;
   width: 100%;
-  overflow: scroll !important;
   height: 100%;
   font: 16px "Roboto", sans-serif;
   background-color: #f2f2f2;
@@ -231,8 +230,16 @@ header {
   width: 250px;
   height: 474px;
   left: 50% !important;
-  margin-left: -165px;
+  margin-left: -125px;
   top: 175px !important; }
+  @media screen and (orientation: portrait) and (max-width: 400px) {
+    .iphone {
+      position: absolute;
+      width: 150px;
+      height: 284px;
+      left: 50% !important;
+      margin-left: -75px;
+      top: 195px !important; } }
 
 .macbook {
   position: absolute;
@@ -240,7 +247,13 @@ header {
   height: 473px;
   left: 50%;
   margin-left: -400px; }
-  @media screen and (orientation: portrait) and (max-width: 700px) {
+  @media screen and (orientation: portrait) and (max-width: 400px) {
+    .macbook {
+      width: 300px;
+      left: 50%;
+      margin-left: -150px;
+      height: 177.5px; } }
+  @media screen and (orientation: portrait) and (min-width: 401px) and (max-width: 700px) {
     .macbook {
       position: absolute;
       width: 400px;
@@ -254,12 +267,18 @@ header {
       margin-left: -350px; } }
   .macbook.liberia {
     top: 200px; }
-    @media screen and (orientation: portrait) and (max-width: 700px) {
+    @media screen and (orientation: portrait) and (max-width: 400px) {
+      .macbook.liberia {
+        top: 250px; } }
+    @media screen and (orientation: portrait) and (min-width: 401px) and (max-width: 700px) {
       .macbook.liberia {
         top: 280px; } }
   .macbook.reindeer {
     top: 200px; }
-    @media screen and (orientation: portrait) and (max-width: 700px) {
+    @media screen and (orientation: portrait) and (max-width: 400px) {
+      .macbook.reindeer {
+        top: 250px; } }
+    @media screen and (orientation: portrait) and (min-width: 401px) and (max-width: 700px) {
       .macbook.reindeer {
         top: 280px; } }
 
@@ -291,28 +310,49 @@ header {
   width: 197px;
   height: 352px;
   left: 50%;
-  margin-left: -140.5px;
+  margin-left: -100px;
   top: 228px;
   overflow: hidden; }
+  @media screen and (orientation: portrait) and (max-width: 400px) {
+    .slide-1-bg-container {
+      position: absolute;
+      width: 120px;
+      height: 210px;
+      left: 50%;
+      margin-left: -60px;
+      top: 228px;
+      overflow: hidden; } }
 
 .slide-1-bg {
   position: relative;
-  width: 510px;
-  height: 425px;
+  width: 460px;
+  height: 355px;
   background-image: url("../images/beroccaBackground@2x.png");
   background-size: 100% auto;
   background-position: center center;
   left: 50% !important;
   margin-left: -225px; }
+  @media screen and (orientation: portrait) and (max-width: 400px) {
+    .slide-1-bg {
+      width: 460px;
+      height: 265px !important; } }
 
 .slide-1-ninja {
   position: absolute;
   width: 190px;
   height: 156px;
   left: 50% !important;
-  margin-left: -115px;
+  margin-left: -95px;
   top: 55% !important;
   margin-top: 320px; }
+  @media screen and (max-width: 400px) {
+    .slide-1-ninja {
+      width: 140px !important;
+      height: 116px !important;
+      left: 50% !important;
+      margin-left: -70px !important;
+      top: 55% !important;
+      margin-top: 260px !important; } }
   @media screen and (max-height: 700px) {
     .slide-1-ninja {
       top: 65% !important; } }
@@ -331,7 +371,13 @@ header {
   left: 50% !important;
   margin-left: -120.5px;
   top: 160px !important; }
-  @media screen and (orientation: portrait) and (max-width: 700px) {
+  @media screen and (orientation: portrait) and (max-width: 400px) {
+    .slide-2-girls {
+      width: 90px;
+      margin-left: -45px;
+      left: 50% !important;
+      top: 260px !important; } }
+  @media screen and (orientation: portrait) and (min-width: 401px) and (max-width: 700px) {
     .slide-2-girls {
       width: 115px;
       left: 50% !important;
@@ -349,7 +395,13 @@ header {
   left: 50% !important;
   margin-left: -273.75px;
   top: 350px !important; }
-  @media screen and (orientation: portrait) and (max-width: 700px) {
+  @media screen and (orientation: portrait) and (max-width: 400px) {
+    .slide-2-our-school-liberia {
+      width: 210px;
+      left: 50% !important;
+      margin-left: -91px;
+      top: 340px !important; } }
+  @media screen and (orientation: portrait) and (min-width: 401px) and (max-width: 700px) {
     .slide-2-our-school-liberia {
       width: 300px;
       left: 50% !important;
@@ -370,7 +422,14 @@ header {
   margin-left: -300px;
   top: 235px;
   overflow: hidden; }
-  @media screen and (orientation: portrait) and (max-width: 700px) {
+  @media screen and (orientation: portrait) and (max-width: 400px) {
+    .slide-2-bg-container {
+      width: 230px;
+      height: 150px;
+      left: 50%;
+      margin-left: -115px;
+      top: 260px; } }
+  @media screen and (orientation: portrait) and (min-width: 401px) and (max-width: 700px) {
     .slide-2-bg-container {
       position: absolute;
       width: 300px;
@@ -411,7 +470,16 @@ header {
   top: 235px;
   overflow: hidden;
   background-color: #0a2e4d; }
-  @media screen and (orientation: portrait) and (max-width: 700px) {
+  @media screen and (orientation: portrait) and (max-width: 400px) {
+    .slide-3-bg-container {
+      position: absolute;
+      width: 230px;
+      height: 140px;
+      left: 50%;
+      margin-left: -115px;
+      top: 263px;
+      overflow: hidden; } }
+  @media screen and (orientation: portrait) and (min-width: 401px) and (max-width: 700px) {
     .slide-3-bg-container {
       position: absolute;
       width: 300px;
@@ -432,7 +500,12 @@ header {
   left: 50% !important;
   margin-left: -125px;
   top: 297px !important; }
-  @media screen and (orientation: portrait) and (max-width: 700px) {
+  @media screen and (orientation: portrait) and (max-width: 400px) {
+    .slide-3-reindeerhouse {
+      width: 105px;
+      margin-left: -52.5px;
+      top: 251px !important; } }
+  @media screen and (orientation: portrait) and (min-width: 401px) and (max-width: 700px) {
     .slide-3-reindeerhouse {
       width: 150px;
       margin-left: -75px;
@@ -448,7 +521,13 @@ header {
   left: 50% !important;
   margin-left: -100px;
   top: 140px !important; }
-  @media screen and (orientation: portrait) and (max-width: 700px) {
+  @media screen and (orientation: portrait) and (max-width: 400px) {
+    .slide-3-reindeer {
+      width: 80px;
+      left: 50% !important;
+      margin-left: -40px;
+      top: 230px !important; } }
+  @media screen and (orientation: portrait) and (min-width: 401px) and (max-width: 700px) {
     .slide-3-reindeer {
       width: 100px;
       left: 50% !important;
@@ -465,25 +544,47 @@ header {
   width: 195px;
   height: 346px;
   left: 50%;
-  margin-left: -140px;
+  margin-left: -100px;
   top: 232px;
   background-color: #fff;
   border: 1px solid #DDD;
   overflow: hidden; }
+  @media screen and (orientation: portrait) and (max-width: 400px) {
+    .slide-4-bg-container {
+      position: absolute;
+      width: 116px;
+      height: 346px;
+      left: 50%;
+      margin-left: -60px;
+      top: 227px; } }
 
 .slide-4-infobox {
   width: 195px;
   left: 50% !important;
-  margin-left: -139px;
+  margin-left: -99px;
   top: 340px !important;
   z-index: 15; }
+  @media screen and (orientation: portrait) and (max-width: 400px) {
+    .slide-4-infobox {
+      width: 117px;
+      left: 50% !important;
+      margin-left: -60px;
+      top: 290px !important;
+      z-index: 15; } }
 
 .slide-4-pandora {
   width: 130px;
   left: 50% !important;
-  margin-left: -105px;
+  margin-left: -67px;
   top: 260px !important;
   z-index: 10; }
+  @media screen and (orientation: portrait) and (max-width: 400px) {
+    .slide-4-pandora {
+      width: 80px;
+      left: 50% !important;
+      margin-left: -40px;
+      top: 246px !important;
+      z-index: 10; } }
 
 .title {
   font-weight: 300;
@@ -491,8 +592,8 @@ header {
   background-color: #a0bbff;
   padding: 15px 30px 15px 20px;
   position: absolute;
-  top: 109px;
-  left: -50px;
+  top: 103px;
+  left: 0px;
   z-index: 10; }
 
 .button {
@@ -502,8 +603,7 @@ header {
   padding: 25px 60px 25px 25px;
   position: absolute;
   margin-bottom: 0px;
-  right: 50px;
-  top: 600px;
+  right: 0px;
   z-index: 20; }
   .button::after {
     content: "";
@@ -519,6 +619,24 @@ header {
     transform: rotate(180deg);
     right: 31px;
     top: 26px; }
+  @media screen and (min-height: 400px) and (max-height: 514px) {
+    .button {
+      top: 350px; } }
+  @media screen and (min-height: 515px) and (max-height: 591px) {
+    .button {
+      top: 400px; } }
+  @media screen and (min-height: 592px) and (max-height: 653px) {
+    .button {
+      top: 475px; } }
+  @media screen and (min-height: 654px) and (max-height: 723px) {
+    .button {
+      top: 550px; } }
+  @media screen and (min-height: 724px) and (max-height: 829px) {
+    .button {
+      top: 600px; } }
+  @media screen and (min-height: 830px) {
+    .button {
+      top: 700px; } }
 
 .left-arrow {
   position: absolute;
@@ -618,7 +736,8 @@ h1 {
   @media screen and (orientation: portrait) {
     h1 {
       line-height: 50px;
-      margin-left: 50px; }
+      margin-left: 20px;
+      font-size: 41px; }
       h1.landscape {
         display: none; } }
 
@@ -652,10 +771,11 @@ h1 {
     top: 150px;
     width: 90%;
     left: 50%;
+    padding-bottom: 100px;
     margin-left: -45%; }
   @media screen and (max-width: 401px) {
     .content {
-      min-height: 650px;
+      min-height: 750px;
       margin-bottom: 20px; } }
   @media screen and (min-width: 401px) and (max-width: 550px) {
     .content {
@@ -706,6 +826,12 @@ h1 {
   min-height: 100%;
   overflow: scroll; }
 
+.page-contact {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: scroll; }
+
 .paintingcontainer {
   position: absolute;
   width: 90%;
@@ -713,7 +839,8 @@ h1 {
   margin-left: -45%;
   top: 300px;
   height: auto;
-  overflow: scroll;
+  overflow: hidden;
+  padding-bottom: 100px;
   -webkit-transition: -webkit-transform;
   -moz-transition: -moz-transform;
   transition: transform; }
@@ -735,5 +862,19 @@ h1 {
 
 .slick-slide:focus {
   outline: none !important; }
+
+.orientationContainer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 2000;
+  background-color: #f5d5ec;
+  display: none; }
+  @media screen and (orientation: landscape) and (max-width: 589px) {
+    .orientationContainer {
+      display: block !important; } }
+  @media screen and (max-width: 295px) {
+    .orientationContainer {
+      display: block !important; } }
 
 /*# sourceMappingURL=style.css.map */
